@@ -1,0 +1,40 @@
+# Python
+**/__pycache__/
+*.py[cod]
+*$py.class
+backend/.venv/
+.venv/
+venv/
+ENV/
+env/
+backend/wander.db
+*.db
+*.sqlite3
+.pytest_cache/
+**/.pytest_cache/
+
+# Flutter / Dart
+app/.dart_tool/
+app/build/
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Android build outputs
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
