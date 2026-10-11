@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 
 /// Deployed backend, used by release builds.
-const _production = 'https://wander-app-xp36.onrender.com';
+const _production = 'https://wander-lnfc.onrender.com';
 
 /// Override at build or run time:
-///   flutter run --dart-define=API_URL=http://10.161.197.7:8001
-///   flutter build apk --dart-define=API_URL=http://10.161.197.7:8001
+///   flutter run --dart-define=API_URL=https://wander-lnfc.onrender.com
+///   flutter build apk --dart-define=API_URL=https://wander-lnfc.onrender.com
 const _override = String.fromEnvironment('API_URL');
 
 String? _customServerUrl;
@@ -19,10 +19,9 @@ String get apiBase {
     return _customServerUrl!;
   }
   if (_override.isNotEmpty) return _override;
-  // Release builds default to production if defined, else local Wi-Fi / localhost
+  // Release builds default to production on Render
   if (kReleaseMode) {
-    // If not overridden, default to local machine IP so APK works out of the box
-    return 'http://10.161.197.7:8001';
+    return _production;
   }
   // Debug and profile builds default to local FastAPI server.
   if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {

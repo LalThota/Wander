@@ -198,6 +198,21 @@ def require_destination(dest_id: str) -> None:
 
 # ───────────── destinations ─────────────
 
+@app.get("/")
+def root() -> dict:
+    return {
+        "status": "online",
+        "app": "Wander API",
+        "version": "2.0.0",
+        "docs": "/docs",
+        "endpoints": {
+            "health": "/api/health",
+            "destinations": "/api/destinations",
+            "trips": "/api/trips",
+        },
+    }
+
+
 @app.get("/api/health")
 def health() -> dict:
     return {"status": "ok"}
